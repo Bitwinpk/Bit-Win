@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Bonus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🎁 Daily Bonus</h1>
+
+<h2 id="bonus">Claim your daily reward!</h2>
+
+<button onclick="claimBonus()">Claim Bonus</button>
+
+<br><br>
+
+<a href="home.html">🏠 Back to Home</a>
+
+<script>
+function claimBonus() {
+    let totalCoins = Number(localStorage.getItem("coins") || 0);
+
+    totalCoins += 50;
+
+    localStorage.setItem("coins", totalCoins);
+
+    document.getElementById("bonus").innerHTML =
+    "🎉 You received 50 Bonus Coins!";
+}let h = localStorage.getItem("history") || "";
+h += "<p>🎁 Daily Bonus +50 Coins</p>";
+localStorage.setItem("history", h);
+</script>
+
+</body>
+</html>

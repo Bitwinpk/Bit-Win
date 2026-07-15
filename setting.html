@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Settings</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+<h1>⚙️ Settings</h1>
+
+<button onclick="resetCoins()">🔄 Reset Coins</button>
+
+<br><br>
+
+<button onclick="resetApp()">🗑 Reset App</button>
+
+<br><br>
+
+<a href="home.html">🏠 Back Home</a>
+
+</div>
+
+<script>
+function resetCoins(){
+    localStorage.setItem("coins",0);
+    alert("Coins Reset Successfully!");
+}
+
+function resetApp(){
+    localStorage.clear();
+    alert("App Reset Successfully!");
+    location.href="index.html";
+}
+</script>
+
+</body>
+</html>

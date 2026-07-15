@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Daily Check-in</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+<h1>📅 Daily Check-in</h1>
+
+<p>Claim your daily reward.</p>
+
+<button onclick="checkin()">Claim 100 Coins</button>
+
+<p id="msg"></p>
+
+<br>
+
+<a href="home.html">🏠 Back Home</a>
+
+</div>
+
+<script>
+function checkin(){
+
+let today = new Date().toDateString();
+
+let last = localStorage.getItem("lastCheckin");
+
+if(last == today){
+document.getElementById("msg").innerHTML =
+"❌ You already claimed today's reward.";
+return;
+}
+
+let coins = Number(localStorage.getItem("coins")) || 0;
+
+coins += 100;
+
+localStorage.setItem("coins", coins);
+
+localStorage.setItem("lastCheckin", today);
+
+document.getElementById("msg").innerHTML =
+"✅ 100 Coins Added Successfully!";
+}
+</script>
+
+</body>
+</html>

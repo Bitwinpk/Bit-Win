@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login - Bit & Win</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+<h1>🔐 Login</h1>
+
+<input type="text" id="name" placeholder="Enter Your Name">
+
+<br><br>
+
+<button onclick="login()">Login</button>
+
+</div>
+
+<script>
+function login(){
+
+let name = document.getElementById("name").value;
+
+if(name==""){
+alert("Please enter your name.");
+return;
+}
+
+localStorage.setItem("username",name);
+
+location.href="home.html";
+}
+</script>
+
+</body>
+</html>

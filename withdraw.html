@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Withdraw</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>💸 Withdraw</h1>
+
+<p>Your Coins:</p>
+
+<h2 id="coins">0</h2>
+
+<input type="text" id="number"
+placeholder="JazzCash / Easypaisa Number">
+
+<br><br>
+
+<button onclick="withdraw()">
+💰 Request Withdraw
+</button>
+
+<br><br>
+
+<p id="msg"></p>
+
+<br>
+
+<a href="home.html">🏠 Back Home</a>
+
+</div>
+
+<script>
+let coins = Number(localStorage.getItem("coins")) || 0;
+
+document.getElementById("coins").innerHTML = coins;
+
+function withdraw(){
+
+let number =
+document.getElementById("number").value;
+
+if(number==""){
+document.getElementById("msg").innerHTML =
+"❌ Enter your number.";
+return;
+}
+
+if(coins < 5000){
+document.getElementById("msg").innerHTML =
+"❌ Minimum 5000 Coins Required.";
+return;
+}
+
+document.getElementById("msg").innerHTML =
+"✅ Withdraw Request Submitted Successfully!";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Promo Code</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+<h1>🎁 Promo Code</h1>
+
+<input type="text" id="promo" placeholder="Enter Promo Code">
+
+<br><br>
+
+<button onclick="redeemPromo()">Redeem</button>
+
+<p id="msg"></p>
+
+<br>
+
+<a href="home.html">🏠 Back Home</a>
+
+</div>
+
+<script>
+function redeemPromo(){
+
+let code = document.getElementById("promo").value.toUpperCase();
+
+if(code=="BIT100"){
+
+let coins = Number(localStorage.getItem("coins")) || 0;
+
+coins += 100;
+
+localStorage.setItem("coins", coins);
+
+document.getElementById("msg").innerHTML =
+"✅ Promo Applied! +100 Coins";
+
+}else{
+
+document.getElementById("msg").innerHTML =
+"❌ Invalid Promo Code";
+
+}
+
+}
+</script>
+
+</body>
+</html>

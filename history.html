@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Transaction History</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+<h1>📜 History</h1>
+
+<div id="history">
+No transactions yet.
+</div>
+
+<br>
+
+<button onclick="clearHistory()">
+🗑 Clear History
+</button>
+
+<br><br>
+
+<a href="home.html">🏠 Back Home</a>
+
+</div>
+
+<script>
+let history =
+localStorage.getItem("history");
+
+if(history){
+document.getElementById("history").innerHTML=history;
+}
+
+function clearHistory(){
+localStorage.removeItem("history");
+location.reload();
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Profile</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>👤 My Profile</h1>
+
+<h2 id="username">Guest User</h2>
+
+<p>Level: ⭐ 1</p>
+
+<p>Total Coins:</p>
+
+<h1 id="coins">0</h1>
+
+<button onclick="editName()">
+✏️ Change Name
+</button>
+
+<br><br>
+
+<a href="home.html">🏠 Back Home</a>
+
+</div>
+
+<script>
+document.getElementById("coins").innerHTML =
+localStorage.getItem("coins") || 0;
+
+function editName(){
+let name = prompt("Enter your name");
+
+if(name){
+localStorage.setItem("username", name);
+document.getElementById("username").innerHTML = name;
+}
+}
+
+let savedName = localStorage.getItem("username");
+
+if(savedName){
+document.getElementById("username").innerHTML = savedName;
+}
+</script>
+
+</body>
+</html>

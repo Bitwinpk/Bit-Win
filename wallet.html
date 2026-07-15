@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wallet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>💰 My Wallet</h1>
+
+<h2>Total Coins</h2>
+
+<h1 id="coins">0</h1>
+
+<button onclick="addCoins()">Add 100 Coins</button>
+
+<br><br>
+
+<a href="home.html">🏠 Back to Home</a>
+
+<script>
+let totalCoins = localStorage.getItem("coins") || 0;
+
+document.getElementById("coins").innerHTML = totalCoins;
+
+function addCoins() {
+    totalCoins = Number(totalCoins) + 100;
+    localStorage.setItem("coins", totalCoins);
+    document.getElementById("coins").innerHTML = totalCoins;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<div class="card">
+
+<h3>💰 Total Coins</h3>
+
+<h1 id="coins">0</h1>
+
+</div>
+<head>
+<title>Bit & Win</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div style="background:linear-gradient(90deg,#0d6efd,#4facfe);
+color:white;
+padding:20px;
+border-radius:20px;
+margin-bottom:20px;">
+
+<h2 id="welcome"></h2>
+
+<p>Play Games & Earn Coins Daily</p>
+
+</div>
+
+<h1>💎 Bit & Win</h1>
+<div class="card">
+
+<h2>👤 Guest User</h2>
+
+<p>Level 1 Player</p>
+
+<p>🔥 Daily Active</p>
+
+</div>
+
+<br>
+<h2>Welcome 👋</h2>
+
+<h3>💰 Total Coins</h3>
+
+<h1 id="coins">0</h1>
+
+<button onclick="location.href='spin.html'">
+🎰 Spin & Win
+</button>
+
+<br><br>
+
+<button onclick="location.href='bonus.html'">
+🎁 Daily Bonus
+</button>
+
+<br><br>
+
+<button onclick="location.href='wallet.html'">
+💰 Wallet
+</button>
+
+<br><br>
+
+<button onclick="location.href='refer.html'">
+👥 Refer & Earn
+</button>
+
+<br><br>
+
+<button onclick="location.href='withdraw.html'">
+💸 Withdraw
+</button>
+<script>
+function logout(){
+    localStorage.removeItem("username");
+    location.href = "login.html";
+}
+</script>
+<script>
+document.getElementById("coins").innerHTML =
+localStorage.getItem("coins") || 0;
+</script>
+<div class="bottom-nav">
+
+<a href="home.html">🏠<br>Home</a>
+
+<a href="spin.html">🎰<br>Spin</a>
+
+<a href="wallet.html">💰<br>Wallet</a>
+
+<a href="refer.html">👥<br>Refer</a>
+
+<a href="withdraw.html">💸<br>Withdraw</a>
+<button onclick="location.href='profile.html'">
+👤 My Profile
+</button><button onclick="location.href='history.html'">
+📜 History
+</button><button onclick="location.href='leaderboard.html'">
+🏆 Leaderboard
+</button><button onclick="location.href='checkin.html'">
+📅 Daily Check-in
+</button><button onclick="location.href='promo.html'">
+🎁 Promo Code
+</button><button onclick="location.href='settings.html'">
+⚙️ Settings
+</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lucky Spin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+<h1>🎰 Lucky Spin</h1>
+
+<h2 id="result">Press Spin</h2>
+
+<div id="wheel" style="
+width:150px;
+height:150px;
+border:8px solid #0d6efd;
+border-radius:50%;
+margin:20px auto;
+font-size:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:transform 3s;">
+🎡
+</div>
+
+<button onclick="spin()">SPIN NOW</button>
+
+<br><br>
+
+<a href="home.html">🏠 Back Home</a>
+
+</div>
+
+<script>
+function spin(){
+
+let wheel=document.getElementById("wheel");
+
+wheel.style.transform="rotate("+(1440+Math.random()*720)+"deg)";
+
+setTimeout(function(){
+
+let win=Math.floor(Math.random()*100)+1;
+
+document.getElementById("result").innerHTML="🎉 You Won "+win+" Coins";
+
+let coins=Number(localStorage.getItem("coins"))||0;
+coins+=win;
+localStorage.setItem("coins",coins);
+
+let history=localStorage.getItem("history")||"";
+history+="<p>🎰 Lucky Spin +"+win+" Coins</p>";
+localStorage.setItem("history",history);
+
+},3000);
+
+}
+</script>
+
+</body>
+</html>

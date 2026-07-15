@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leaderboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+<h1>🏆 Leaderboard</h1>
+
+<table border="1" width="100%">
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Coins</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>You</td>
+<td id="coins"></td>
+</tr>
+
+</table>
+
+<br>
+
+<a href="home.html">🏠 Back Home</a>
+
+</div>
+
+<script>
+document.getElementById("coins").innerHTML =
+localStorage.getItem("coins") || 0;
+</script>
+
+</body>
+</html>
